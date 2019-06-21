@@ -1,5 +1,5 @@
-name: vito helper
+name: Webmaster alert
 type: module
-description: Helper module for VITO
+description: Sends out alerts
 core: 8.x
-package: VITO
+package: Webmaster
