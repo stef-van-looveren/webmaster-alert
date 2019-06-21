@@ -8,3 +8,5 @@ Sending a simple notification on certain events requires sometime a bit too much
 2. From now on, in your custom modules you can use `webmaster_alert_send_alert($title, $message)`. This will send an e-mail to the configured email address with the specified message.
 ## Tutorial
 For a tutorial on the usage of this module: [Send email notifications to webmaster on certain events in drupal 8](https://stefvanlooveren.me/blog/send-email-notifications-webmaster-certain-events-drupal-8).
+## Thanks
+This module was build while working for [VITO (Flanders Institue for Technological Research)](https://www.vito.be).
