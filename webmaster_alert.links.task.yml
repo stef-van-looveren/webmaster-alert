@@ -1,0 +1,4 @@
+webmaster_alert.task_admin_settings_default:
+  route_name: webmaster_alert.alert_settings
+  title: Alert
+  parent_id: webmaster_alert.task_admin_settings_general

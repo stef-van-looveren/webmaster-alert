@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Implements hook_mail().
+ */
+function webmaster_alert_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+   case 'webmaster_alert':
+     $message['from'] = \Drupal::config('system.site')->get('mail');
+     $message['subject'] = t('@title', array('@title' => $params['title']), $options);
+     $message['body'][] = $params['message'];
+     break;
+  }
+}
+
+/**
+ * @param $title
+ * @param $message
+ * Custom helper module to send notification to webdev on certain events
+ */
+function webmaster_alert_send_alert($title, $message) {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'webmaster_alert';
+  $key = 'webmaster_alert';
+  $to = \Drupal::config('webmaster_alert.settings')->get('email');
+  $params['message'] = $message;
+  $params['title'] = $title;
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $send = true;
+  if($to) {
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+    if ($result['result'] !== true) {
+      \Drupal::logger('webmaster_alert')->error('Alert could not be sent '.$to.'. Alert: '.$message);
+    }
+    else {
+      \Drupal::logger('webmaster_alert')->notice('Alert sent to '.$to.'. Alert: '.$message);
+    }
+  } else {
+    \Drupal::logger('webmaster_alert')->notice('No alert was send. Please specify an email address.');
+  }
+
+}

@@ -1,0 +1,15 @@
+webmaster_alert.route_admin_config:
+  path: '/admin/config/webmaster'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Webmaster'
+  requirements:
+    _permission: 'administer content'
+  position: right
+webmaster_alert.alert_settings:
+  path: '/admin/config/webmaster/alert'
+  defaults:
+    _title: 'Alert settings'
+    _form: '\Drupal\webmaster_alert\Form\AdminSettingsForm'
+  requirements:
+    _permission: 'administer content'

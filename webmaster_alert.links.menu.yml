@@ -1,0 +1,15 @@
+webmaster_alert.admin:
+  title: 'Add content'
+  parent: system.admin_content
+  url: internal:/node/add
+### Admin section ###
+webmaster_alert.menu_admin_config:
+  title: 'Webmaster alerts'
+  description: 'Webmaster alerts settings'
+  parent: system.admin_config
+  route_name: webmaster_alert.route_admin_config
+webmaster_alert.alert_settings:
+  title: 'Alerts'
+  description: 'Who receives notifications from the site'
+  parent: webmaster_alert.menu_admin_config
+  route_name: webmaster_alert.alert_settings

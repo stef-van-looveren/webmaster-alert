@@ -1,0 +1,5 @@
+name: vito helper
+type: module
+description: Helper module for VITO
+core: 8.x
+package: VITO
