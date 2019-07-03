@@ -9,4 +9,4 @@ Sending a simple notification on certain events requires sometime a bit too much
 ## Tutorial
 For a tutorial on the usage of this module: [Send email notifications to webmaster on certain events in drupal 8](https://stefvanlooveren.me/blog/send-email-notifications-webmaster-certain-events-drupal-8).
 ## Thanks
-This module was build while working for [VITO (Flanders Institue for Technological Research)](https://www.vito.be).
+This module was built while working for [VITO (Flanders Institue for Technological Research)](https://www.vito.be).
